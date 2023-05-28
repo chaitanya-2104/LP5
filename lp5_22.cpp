@@ -27,11 +27,6 @@ void parallelBubbleSort(int arr[], int n) {
  }
  }
  }
- //for(int i =0;i<n;i++)
-
-//{
-//    cout<<arr[i]<<" ";
-//}
 }
 // function to merge two subarrays in ascending order
 void merge(int arr[], int left, int mid, int right) {
@@ -98,11 +93,13 @@ void parallelMergeSort(int arr[], int left, int right, int num_threads) {
  }
 }
 int main() {
- int n = 10000;
+ int n = 10;
  int arr[n];
  // initialize array with random values
  for (int i = 0; i < n; i++) {
- arr[i] = rand()%n;
+        int a;
+        cin>>a;
+ arr[i] = a;
  }
  // copy array for parallel sorting
  int arr_copy[n];
@@ -114,10 +111,10 @@ int main() {
  bubbleSort(arr, n);
  double end_time = omp_get_wtime();
  double sequential_bubble_time = end_time - start_time;
-//  measure time for parallel bubble sort
-  start_time = omp_get_wtime();
+ // measure time for parallel bubble sort
+ start_time = omp_get_wtime();
  parallelBubbleSort(arr_copy, n);
-  end_time = omp_get_wtime();
+ end_time = omp_get_wtime();
  double parallel_bubble_time = end_time - start_time;
  // output results for bubble sort
  cout << "Bubble Sort Results:" << endl;
@@ -125,14 +122,16 @@ int main() {
  cout << "Parallel Time: " << parallel_bubble_time << " seconds" << endl;
  // reset array for merge sort
  for (int i = 0; i < n; i++) {
-        arr[i] = rand() %n;
+        int a;
+        cin>>a;
+        arr[i] = a;
  }
  // copy array for parallel sorting
  for (int i = 0; i < n; i++) {
  arr_copy[i] = arr[i];
  }
  // measure time for sequential merge sort
- //start_time = omp_get_wtime();
+ start_time = omp_get_wtime();
  mergeSort(arr, 0, n-1);
  end_time = omp_get_wtime();
  double sequential_merge_time = end_time - start_time;

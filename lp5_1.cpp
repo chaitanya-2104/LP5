@@ -103,13 +103,20 @@ void Graph::dfs(int start) {
  delete[] visited;
 }
 int main() {
- Graph g(7); // create a graph with 7 vertices
- g.addEdge(0, 1); // root node
- g.addEdge(0, 2);
- g.addEdge(1, 3);
- g.addEdge(1, 4);
- g.addEdge(2, 5);
- g.addEdge(2, 6);
+    int a;
+    cout<<"enter a number of edges:";
+    cin>>a;
+ Graph g(a);
+ for(int i=0;i<a;i++)
+ {
+
+     int b,c;
+     cout<<"enter the edge:";
+     cin>>b>>c;
+     g.addEdge(b,c);
+ }
+
+
 // Call BFS and display complete traversal route
 cout << "BFS Traversal: ";
 double start_time = omp_get_wtime();
@@ -119,7 +126,7 @@ double sequential_bubble_time = end_time - start_time;
 // measure time for parallel bubble sort
 
 cout << endl;
-// Call DFS and display complete traversal route
+//Call DFS and display complete traversal route
 cout << "DFS Traversal: ";
 double start_times = omp_get_wtime();
 g.dfs(0);

@@ -4,7 +4,9 @@ using namespace std;
 // function to generate an array of random integers
 void generateArray(int arr[], int n) {
  for (int i = 0; i < n; i++) {
- arr[i] = rand();
+        int a;
+        cin>>a;
+ arr[i] = a;
  }
 }
 // function to perform parallel reduction to find the minimum value
@@ -48,7 +50,10 @@ double parallelAverage(int arr[], int n) {
  return sum_val / n;
 }
 int main() {
- int n = 10;
+    cout<<"enter the size of array:";
+
+     int n ;
+     cin>>n;
  int arr[n];
  generateArray(arr, n);
 

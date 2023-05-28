@@ -1,0 +1,11 @@
+g++ -fopenmp lp5_3.cpp -o lp5_3
+
+./lp5_3    or    ./a.out
+
+cd Desktop
+cd B3456
+
+
+
+cuda...    nvcc lp5_4.cu
+./a.out
